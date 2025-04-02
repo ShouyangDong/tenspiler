@@ -1,5 +1,8 @@
 from metalift.ir import Int, List, Matrix, fn_decl_recursive, ite
 from tenspiler.codegen.gaudi_codegen import gaudi_codegen
+from tenspiler.codegen.numpy_codegen import numpy_codegen
+from tenspiler.codegen.pytorch_codegen import pytorch_codegen
+from tenspiler.codegen.tensorflow_codegen import tensorflow_codegen
 from tenspiler.codegen.utils import DataType
 from tenspiler.tenspiler_common import (
     DISSOLVE_MATRIX_SELECTION_TWO_ARGS,
@@ -521,36 +524,37 @@ def dot():
 
 
 # codegen_funcs = [mlx_codegen, numpy_codegen, pytorch_codegen, tensorflow_codegen]
-codegen_funcs = [gaudi_codegen]
+# codegen_funcs = [gaudi_codegen]
+codegen_funcs = [pytorch_codegen]
 
 for codegen_func in codegen_funcs:
-    print(*dot())
-    codegen_func(*dot())
-    exit(0)
-    codegen_func(*test_type())
+    # print(*dot())
+    # codegen_func(*dot())
+    # exit(0)
+    # codegen_func(*test_type())
 
-    codegen_func(*dissolve_blend_8())
-    codegen_func(*darken_blend_8())
-    codegen_func(*color_burn_8())
-    codegen_func(*lighten_blend_8())
-    codegen_func(*color_dodge_8())
-    codegen_func(*overlay_blend_8())
-    codegen_func(*multiply_blend_8())
-    codegen_func(*linear_burn_8())
-    codegen_func(*screen_blend_8())
-    codegen_func(*linear_dodge_8())
-    codegen_func(*normal_blend_f())
-    codegen_func(*normal_blend_8())
-    exit(0)
+    # codegen_func(*dissolve_blend_8())
+    # codegen_func(*darken_blend_8())
+    # codegen_func(*color_burn_8())
+    # codegen_func(*lighten_blend_8())
+    # codegen_func(*color_dodge_8())
+    # codegen_func(*overlay_blend_8())
+    # codegen_func(*multiply_blend_8())
+    # codegen_func(*linear_burn_8())
+    # codegen_func(*screen_blend_8())
+    # codegen_func(*linear_dodge_8())
+    # codegen_func(*normal_blend_f())
+    # codegen_func(*normal_blend_8())
+    # exit(0)
 
     codegen_func(*matmul())
-    codegen_func(*transformer_part1())
-    codegen_func(*transformer_part2())
-    codegen_func(*transformer_part3())
-    codegen_func(*transformer_part4())
-    codegen_func(*rmsnorm_part1())
-    codegen_func(*rmsnorm_part2())
-    codegen_func(*softmax_part1())
-    codegen_func(*softmax_part2())
-    codegen_func(*softmax_part3())
-    codegen_func(*softmax_part4())
+    # codegen_func(*transformer_part1())
+    # codegen_func(*transformer_part2())
+    # codegen_func(*transformer_part3())
+    # codegen_func(*transformer_part4())
+    # codegen_func(*rmsnorm_part1())
+    # codegen_func(*rmsnorm_part2())
+    # codegen_func(*softmax_part1())
+    # codegen_func(*softmax_part2())
+    # codegen_func(*softmax_part3())
+    # codegen_func(*softmax_part4())
